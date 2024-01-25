@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ¿Cuál es el mejor nombre para el perrito?</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="container d-flex flex-column justify-content-center align-items-center" style="background-color: #b689f1;">
+    <h1> <center> ¿Cuál es el mejor nombre para el perrito? </center></h1>
+
+    <button style="background-color: #f0e1d3; color: #8B4513;" class="btn btn-light btn-lg" id="miloButton" onclick="mostrarMensaje(' Así me gusta :P')"> Milo </button>
+    <button style="background-color: #aae2ad; color: #137c0a;" class="btn btn-light btn-lg" id="brunoButton" onmouseenter="bruno(event)"> Bruno </button>
+
+    <img src="MILO.JPG" alt="Milo" id="miloImage" style="max-width: 100%; max-height: 100%; margin-top: 20px; display: none;">
+
+    <script>
+        function bruno(evt){
+            let target = evt.target;
+            let maxWidth = window.innerWidth;
+            let maxHeight = window.innerHeight;
+
+            let randomWidth = getRandomInt(0, maxWidth - target.offsetWidth);
+            let randomHeight = getRandomInt(0, maxHeight - target.offsetHeight);
+
+            target.style.position = 'absolute';
+            target.style.top = randomHeight + 'px';
+            target.style.left = randomWidth + 'px';
+        }
+
+        function getRandomInt(min, max){
+            return Math.floor (Math.random() * (max - min)) + min;
+        }
+
+        function mostrarMensaje(mensaje) {
+            alert(mensaje);
+            let miloImage = document.getElementById("miloImage");
+            miloImage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
